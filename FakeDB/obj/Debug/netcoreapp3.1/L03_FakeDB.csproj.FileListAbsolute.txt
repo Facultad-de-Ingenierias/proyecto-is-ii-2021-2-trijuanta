@@ -1,0 +1,8 @@
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\FakeDB\bin\Debug\netcoreapp3.1\L03_FakeDB.deps.json
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\FakeDB\bin\Debug\netcoreapp3.1\L03_FakeDB.dll
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\FakeDB\bin\Debug\netcoreapp3.1\L03_FakeDB.pdb
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\FakeDB\obj\Debug\netcoreapp3.1\L03_FakeDB.AssemblyInfoInputs.cache
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\FakeDB\obj\Debug\netcoreapp3.1\L03_FakeDB.AssemblyInfo.cs
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\FakeDB\obj\Debug\netcoreapp3.1\L03_FakeDB.csproj.CoreCompileInputs.cache
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\FakeDB\obj\Debug\netcoreapp3.1\L03_FakeDB.dll
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\FakeDB\obj\Debug\netcoreapp3.1\L03_FakeDB.pdb
