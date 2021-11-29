@@ -1,0 +1,14 @@
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\obj\Debug\netcoreapp3.1\L02_Persistence.csprojAssemblyReference.cache
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\obj\Debug\netcoreapp3.1\L02_Persistence.AssemblyInfoInputs.cache
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\obj\Debug\netcoreapp3.1\L02_Persistence.AssemblyInfo.cs
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\obj\Debug\netcoreapp3.1\L02_Persistence.csproj.CoreCompileInputs.cache
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\bin\Debug\netcoreapp3.1\L02_Persistence.deps.json
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\bin\Debug\netcoreapp3.1\L02_Persistence.dll
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\bin\Debug\netcoreapp3.1\L02_Persistence.pdb
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\bin\Debug\netcoreapp3.1\L01_Domain.dll
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\bin\Debug\netcoreapp3.1\L03_FakeDB.dll
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\bin\Debug\netcoreapp3.1\L01_Domain.pdb
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\bin\Debug\netcoreapp3.1\L03_FakeDB.pdb
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\obj\Debug\netcoreapp3.1\L02_Persistence.csproj.CopyComplete
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\obj\Debug\netcoreapp3.1\L02_Persistence.dll
+C:\Users\oscar\OneDrive\@Academic\NetSoftware\Application\Persistence\obj\Debug\netcoreapp3.1\L02_Persistence.pdb

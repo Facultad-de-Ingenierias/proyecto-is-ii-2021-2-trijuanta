@@ -1,0 +1,15 @@
+using L01_Domain.MedicoXPaciente;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace L02_Persistence
+{
+    public class RepositorioMedicoXPaciente : IRepositorioMedicoXPaciente
+    {
+        List<MedicoXPaciente> IRepositorioMedicoXPaciente.GetMedicoXPaciente()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

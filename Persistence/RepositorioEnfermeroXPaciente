@@ -1,0 +1,15 @@
+using L01_Domain.EnfermeroXPaciente;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace L02_Persistence
+{
+    public class RepositorioEnfermeroXPaciente : IRepositorioEnfermeroXPaciente
+    {
+        List<EnfermeroXPaciente> IRepositorioEnfermeroXPaciente.GetEnfermeroXPaciente()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
