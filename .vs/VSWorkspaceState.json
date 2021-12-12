@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\dotnetmvc",
-    "\\dotnetmvc\\Models"
+    "\\dotnet",
+    "\\dotnet\\dotnet",
+    "\\dotnet\\dotnet\\Views",
+    "\\dotnet\\dotnet\\Views\\Paciente"
   ],
-  "SelectedNode": "\\dotnetmvc\\Models",
+  "SelectedNode": "\\dotnet\\dotnet\\Views\\Paciente\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
