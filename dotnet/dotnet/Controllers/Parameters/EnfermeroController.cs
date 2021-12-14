@@ -14,7 +14,7 @@ namespace dotnet.Controllers.Parameters
         private readonly TrijuantaBDContext _context;
 
         public EnfermeroController(TrijuantaBDContext context)
-        {
+        { 
             _context = context;
         }
 
@@ -24,6 +24,9 @@ namespace dotnet.Controllers.Parameters
             var trijuantaBDContext = _context.Enfermeros.Include(e => e.IdCuentaNavigation);
             return View(await trijuantaBDContext.ToListAsync());
         }
+
+        
+        
 
         // GET: Enfermero/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -47,6 +50,7 @@ namespace dotnet.Controllers.Parameters
         // GET: Enfermero/Create
         public IActionResult Create()
         {
+
             ViewData["IdCuenta"] = new SelectList(_context.Cuenta, "Id", "Contrasena");
             return View();
         }
@@ -64,6 +68,7 @@ namespace dotnet.Controllers.Parameters
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["IdCuenta"] = new SelectList(_context.Cuenta, "Id", "Contrasena", enfermero.IdCuenta);
             return View(enfermero);
         }

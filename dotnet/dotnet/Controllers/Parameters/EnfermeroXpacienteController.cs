@@ -48,8 +48,8 @@ namespace dotnet.Controllers.Parameters
         // GET: EnfermeroXpaciente/Create
         public IActionResult Create()
         {
-            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Celular");
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular");
+            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Documento");
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace dotnet.Controllers.Parameters
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Celular", enfermeroXpaciente.IdEnfermero);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", enfermeroXpaciente.IdPaciente);
+            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Documento", enfermeroXpaciente.IdEnfermero);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", enfermeroXpaciente.IdPaciente);
             return View(enfermeroXpaciente);
         }
 
@@ -84,8 +84,8 @@ namespace dotnet.Controllers.Parameters
             {
                 return NotFound();
             }
-            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Celular", enfermeroXpaciente.IdEnfermero);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", enfermeroXpaciente.IdPaciente);
+            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Documento", enfermeroXpaciente.IdEnfermero);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", enfermeroXpaciente.IdPaciente);
             return View(enfermeroXpaciente);
         }
 
@@ -121,8 +121,8 @@ namespace dotnet.Controllers.Parameters
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Celular", enfermeroXpaciente.IdEnfermero);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", enfermeroXpaciente.IdPaciente);
+            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Documento", enfermeroXpaciente.IdEnfermero);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", enfermeroXpaciente.IdPaciente);
             return View(enfermeroXpaciente);
         }
 

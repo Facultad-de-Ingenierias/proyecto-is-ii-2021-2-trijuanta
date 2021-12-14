@@ -47,7 +47,10 @@ namespace dotnet.Controllers.Parameters
         // GET: Paciente/Create
         public IActionResult Create()
         {
+            
+            
             ViewData["IdDireccionGeo"] = new SelectList(_context.DireccionGeos, "Id", "Direccion");
+
             return View();
         }
 

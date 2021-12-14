@@ -19,10 +19,24 @@ namespace dotnet.Controllers.Parameters
         }
 
         // GET: MedicoXpaciente
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            var trijuantaBDContext = _context.MedicoXpacientes.Include(m => m.IdMedicoNavigation).Include(m => m.IdPacienteNavigation);
+
+            var trijuantaBDContext = from m in _context.MedicoXpacientes select m;
+
+            if (!String.IsNullOrEmpty(id.ToString()))
+            {
+                trijuantaBDContext = trijuantaBDContext.Where(s => s.IdMedico == id);
+            }
+
+
+            if (trijuantaBDContext == null)
+            {
+                return NotFound();
+            }
+
             return View(await trijuantaBDContext.ToListAsync());
+
         }
 
         // GET: MedicoXpaciente/Details/5
@@ -48,8 +62,8 @@ namespace dotnet.Controllers.Parameters
         // GET: MedicoXpaciente/Create
         public IActionResult Create()
         {
-            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Celular");
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular");
+            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Documento");
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento");
             return View();
         }
 
@@ -66,8 +80,8 @@ namespace dotnet.Controllers.Parameters
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Celular", medicoXpaciente.IdMedico);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", medicoXpaciente.IdPaciente);
+            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Documento", medicoXpaciente.IdMedico);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", medicoXpaciente.IdPaciente);
             return View(medicoXpaciente);
         }
 
@@ -84,8 +98,8 @@ namespace dotnet.Controllers.Parameters
             {
                 return NotFound();
             }
-            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Celular", medicoXpaciente.IdMedico);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", medicoXpaciente.IdPaciente);
+            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Documento", medicoXpaciente.IdMedico);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", medicoXpaciente.IdPaciente);
             return View(medicoXpaciente);
         }
 
@@ -121,8 +135,8 @@ namespace dotnet.Controllers.Parameters
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Celular", medicoXpaciente.IdMedico);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", medicoXpaciente.IdPaciente);
+            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Documento", medicoXpaciente.IdMedico);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", medicoXpaciente.IdPaciente);
             return View(medicoXpaciente);
         }
 

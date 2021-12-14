@@ -4,59 +4,81 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Registrar Signos Vitales</h1>
 
-<h4>SignosVitale</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Oximetria" class="control-label"></label>
-                <input asp-for="Oximetria" class="form-control" />
-                <span asp-validation-for="Oximetria" class="text-danger"></span>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label asp-for="Oximetria" class="control-label"></label>
+                    <input asp-for="Oximetria" class="form-control" />
+                    <span asp-validation-for="Oximetria" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label asp-for="FrecCardiaca" class="control-label"></label>
+                    <input asp-for="FrecCardiaca" class="form-control" />
+                    <span asp-validation-for="FrecCardiaca" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label asp-for="FrecRespiratoria" class="control-label"></label>
+                    <input asp-for="FrecRespiratoria" class="form-control" />
+                    <span asp-validation-for="FrecRespiratoria" class="text-danger"></span>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="FrecCardiaca" class="control-label"></label>
-                <input asp-for="FrecCardiaca" class="form-control" />
-                <span asp-validation-for="FrecCardiaca" class="text-danger"></span>
+
+            <div class="row">
+                <div class="form-group col">
+                    <label asp-for="Temperatura" class="control-label"></label>
+                    <input asp-for="Temperatura" class="form-control" />
+                    <span asp-validation-for="Temperatura" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label asp-for="PresionArterial" class="control-label"></label>
+                    <input asp-for="PresionArterial" class="form-control" />
+                    <span asp-validation-for="PresionArterial" class="text-danger"></span>
+                </div>
+
+
+
+                <div class="form-group col">
+                    <label asp-for="Glicemias" class="control-label"></label>
+                    <input asp-for="Glicemias" class="form-control" />
+                    <span asp-validation-for="Glicemias" class="text-danger"></span>
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="FrecRespiratoria" class="control-label"></label>
-                <input asp-for="FrecRespiratoria" class="form-control" />
-                <span asp-validation-for="FrecRespiratoria" class="text-danger"></span>
+            <div class="row">
+
+                <div class="form-group col">
+                    <label asp-for="IdEnfermero" class="control-label"></label>
+                    <select asp-for="IdEnfermero" class="form-control" asp-items="ViewBag.IdEnfermero"></select>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Temperatura" class="control-label"></label>
-                <input asp-for="Temperatura" class="form-control" />
-                <span asp-validation-for="Temperatura" class="text-danger"></span>
+
+
+            <div class="row">
+
+                <div class="form-group col">
+                    <a class="btn btn-outline-primary" asp-controller="Paciente" asp-action="Index">Cancelar</a>
+                </div>
+
+                <div class="form-group col d-flex justify-content-end">
+                    <input type="submit" value="Registrar" asp-controller="Paciente" asp-action="Index" class="btn btn-primary" />
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="PresionArterial" class="control-label"></label>
-                <input asp-for="PresionArterial" class="form-control" />
-                <span asp-validation-for="PresionArterial" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Glicemias" class="control-label"></label>
-                <input asp-for="Glicemias" class="form-control" />
-                <span asp-validation-for="Glicemias" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdEnfermero" class="control-label"></label>
-                <select asp-for="IdEnfermero" class ="form-control" asp-items="ViewBag.IdEnfermero"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
 }

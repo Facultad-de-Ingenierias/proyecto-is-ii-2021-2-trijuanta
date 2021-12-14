@@ -47,7 +47,7 @@ namespace dotnet.Controllers.Parameters
         // GET: SignosVitale/Create
         public IActionResult Create()
         {
-            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Celular");
+            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Documento");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace dotnet.Controllers.Parameters
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Celular", signosVitale.IdEnfermero);
+            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Documento", signosVitale.IdEnfermero);
             return View(signosVitale);
         }
 
@@ -81,7 +81,7 @@ namespace dotnet.Controllers.Parameters
             {
                 return NotFound();
             }
-            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Celular", signosVitale.IdEnfermero);
+            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Documento", signosVitale.IdEnfermero);
             return View(signosVitale);
         }
 
@@ -117,7 +117,7 @@ namespace dotnet.Controllers.Parameters
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Celular", signosVitale.IdEnfermero);
+            ViewData["IdEnfermero"] = new SelectList(_context.Enfermeros, "Id", "Documento", signosVitale.IdEnfermero);
             return View(signosVitale);
         }
 

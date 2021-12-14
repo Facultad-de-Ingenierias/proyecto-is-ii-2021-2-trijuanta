@@ -4,8 +4,8 @@
     "\\dotnet",
     "\\dotnet\\dotnet",
     "\\dotnet\\dotnet\\Views",
-    "\\dotnet\\dotnet\\Views\\Paciente"
+    "\\dotnet\\dotnet\\Views\\MedicoXpaciente"
   ],
-  "SelectedNode": "\\dotnet\\dotnet\\Views\\Paciente\\Index.cshtml",
+  "SelectedNode": "\\dotnet\\dotnet\\Views\\MedicoXpaciente\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

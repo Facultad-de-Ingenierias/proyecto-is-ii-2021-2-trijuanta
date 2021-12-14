@@ -48,8 +48,8 @@ namespace dotnet.Controllers.Parameters
         // GET: FamiliarXpaciente/Create
         public IActionResult Create()
         {
-            ViewData["IdFamiliar"] = new SelectList(_context.Familiars, "Id", "Apellidos");
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular");
+            ViewData["IdFamiliar"] = new SelectList(_context.Familiars, "Id", "Documento");
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento");
             return View();
         }
 
@@ -66,8 +66,8 @@ namespace dotnet.Controllers.Parameters
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdFamiliar"] = new SelectList(_context.Familiars, "Id", "Apellidos", familiarXpaciente.IdFamiliar);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", familiarXpaciente.IdPaciente);
+            ViewData["IdFamiliar"] = new SelectList(_context.Familiars, "Id", "Documento", familiarXpaciente.IdFamiliar);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", familiarXpaciente.IdPaciente);
             return View(familiarXpaciente);
         }
 
@@ -84,8 +84,8 @@ namespace dotnet.Controllers.Parameters
             {
                 return NotFound();
             }
-            ViewData["IdFamiliar"] = new SelectList(_context.Familiars, "Id", "Apellidos", familiarXpaciente.IdFamiliar);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", familiarXpaciente.IdPaciente);
+            ViewData["IdFamiliar"] = new SelectList(_context.Familiars, "Id", "Documento", familiarXpaciente.IdFamiliar);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", familiarXpaciente.IdPaciente);
             return View(familiarXpaciente);
         }
 
@@ -121,8 +121,8 @@ namespace dotnet.Controllers.Parameters
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdFamiliar"] = new SelectList(_context.Familiars, "Id", "Apellidos", familiarXpaciente.IdFamiliar);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", familiarXpaciente.IdPaciente);
+            ViewData["IdFamiliar"] = new SelectList(_context.Familiars, "Id", "Documento", familiarXpaciente.IdFamiliar);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", familiarXpaciente.IdPaciente);
             return View(familiarXpaciente);
         }
 

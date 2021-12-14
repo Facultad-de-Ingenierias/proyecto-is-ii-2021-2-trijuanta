@@ -19,29 +19,38 @@ namespace dotnet.Controllers.Parameters
         }
 
         // GET: Diagnostico
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            var trijuantaBDContext = _context.Diagnosticos.Include(d => d.IdMedicoNavigation).Include(d => d.IdPacienteNavigation).Include(d => d.IdSignosVitalesNavigation);
+           
+
+
+            var trijuantaBDContext = from m in _context.Diagnosticos select m;  
+
+            if (!String.IsNullOrEmpty(id.ToString()))
+            {
+                trijuantaBDContext = trijuantaBDContext.Where(s => s.Id == id);
+            }
+
+
+            if (trijuantaBDContext == null)
+            {
+                return NotFound();
+            }
+
             return View(await trijuantaBDContext.ToListAsync());
         }
 
         // GET: Diagnostico/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+     
 
             var diagnostico = await _context.Diagnosticos
                 .Include(d => d.IdMedicoNavigation)
                 .Include(d => d.IdPacienteNavigation)
                 .Include(d => d.IdSignosVitalesNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (diagnostico == null)
-            {
-                return NotFound();
-            }
+       
 
             return View(diagnostico);
         }
@@ -49,8 +58,8 @@ namespace dotnet.Controllers.Parameters
         // GET: Diagnostico/Create
         public IActionResult Create()
         {
-            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Celular");
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular");
+            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Documento");
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento");
             ViewData["IdSignosVitales"] = new SelectList(_context.SignosVitales, "Id", "Id");
             return View();
         }
@@ -68,8 +77,8 @@ namespace dotnet.Controllers.Parameters
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Celular", diagnostico.IdMedico);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", diagnostico.IdPaciente);
+            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Documento", diagnostico.IdMedico);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", diagnostico.IdPaciente);
             ViewData["IdSignosVitales"] = new SelectList(_context.SignosVitales, "Id", "Id", diagnostico.IdSignosVitales);
             return View(diagnostico);
         }
@@ -87,8 +96,8 @@ namespace dotnet.Controllers.Parameters
             {
                 return NotFound();
             }
-            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Celular", diagnostico.IdMedico);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", diagnostico.IdPaciente);
+            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Documento", diagnostico.IdMedico);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", diagnostico.IdPaciente);
             ViewData["IdSignosVitales"] = new SelectList(_context.SignosVitales, "Id", "Id", diagnostico.IdSignosVitales);
             return View(diagnostico);
         }
@@ -125,8 +134,8 @@ namespace dotnet.Controllers.Parameters
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Celular", diagnostico.IdMedico);
-            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Celular", diagnostico.IdPaciente);
+            ViewData["IdMedico"] = new SelectList(_context.Medicos, "Id", "Documento", diagnostico.IdMedico);
+            ViewData["IdPaciente"] = new SelectList(_context.Pacientes, "Id", "Documento", diagnostico.IdPaciente);
             ViewData["IdSignosVitales"] = new SelectList(_context.SignosVitales, "Id", "Id", diagnostico.IdSignosVitales);
             return View(diagnostico);
         }

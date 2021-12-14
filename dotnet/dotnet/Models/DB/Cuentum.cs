@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -18,6 +20,8 @@ namespace dotnet.Models.DB
         public int Id { get; set; }
         public int Rol { get; set; }
         public string Usuario { get; set; }
+        
+        [DataType(DataType.Password)]
         public string Contrasena { get; set; }
 
         public virtual ICollection<Administrativo> Administrativos { get; set; }
