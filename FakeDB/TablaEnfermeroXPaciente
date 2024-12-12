@@ -1,0 +1,62 @@
+using Microsoft.VisualBasic.CompilerServices;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace FakeDB
+{
+    public static class TablaEnfermeroXPaciente
+    {
+        private static readonly List<AtributosEnfermeroXPaciente> EnfermeroXPaciente = new List<AtributosEnfermero>();
+        class AtributosEnfermeroXPaciente
+        {
+            public int idAsignacion { get; }
+            public int idAsignacion { get; }
+            public int idPaciente { get;  }
+            public DateTime FechaInicio { get; set; }
+            public DateTime FechaFin { get; set; }
+            
+
+            public AtributosEnfermeroXpaciente(int id)
+            {
+                idAsignacion = 10000 + id;
+                idEnfermeo = 20000 + id;
+                idPaciente = 30000 + id;
+                FechaInicio = "2019-01-06T17:16:40";
+                FechaFin = "2019-01-06T17:16:40";
+                
+            }
+
+            public String ToJSON()
+            {
+                return System.Text.Json.JsonSerializer.Serialize(this);
+            }
+                           
+        }
+
+      
+        public static void InstanciarEnfermeroXPaciente(int numeroEnfermeroXPaciente)
+        {
+            for (int i = 0; i < numeroEnfermeroXPaciente; i++)
+            {
+                EnfermeroXPaciente.Add(new AtributosEnfermeroXpaciente(i));
+            }
+        }
+
+        public static String ToJSON()
+        {
+            if (EnfermeroXPaciente.Count == 0)
+            {
+                InstanciarEnfermeroXPaciente(10);
+            }
+            var options = new System.Text.Json.JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            return System.Text.Json.JsonSerializer.Serialize(EnfermeroXPaciente, options);
+        }
+
+    
+     }
+}
